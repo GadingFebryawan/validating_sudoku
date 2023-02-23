@@ -34,7 +34,7 @@ module.exports = {
                 for (var j = 0; j < 9; j++) {
                     tempData = sudoku[number][i][j];
                     //check if there is number 0 / bigger than 9 in data
-                    if(tempData == 0 || tempData > 9) return false;
+                    if (tempData == 0 || tempData > 9) return false;
 
                     //check if the new number have same row/col/grid from before
                     if (map['row' + i + tempData] || map['col' + j + tempData] || map['grid' + Math.floor(i / 3) + Math.floor(j / 3) + tempData]) return false;

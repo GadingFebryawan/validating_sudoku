@@ -2,7 +2,7 @@ const express = require('express')
 const bodyparser = require("body-parser")
 const app = express()
 const port = 3004
-const sudokuvalidate = require("./sudokuvalidation")
+const sudokuvalidate = require("./src/sudokuvalidation")
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
@@ -19,7 +19,7 @@ app.post('/sudoku-validation', (req, res) => {
 })
 
 app.get('*', function (req, res) {
-    res.status(404).json({ 'message': "Url Not Found" });
+  res.status(404).json({ 'message': "Url Not Found" });
 });
 
 app.listen(port, () => {
